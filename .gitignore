@@ -1,0 +1,7 @@
+# model weights live on huggingface, not in this repo
+*.pt
+
+# python / os cruft
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,6 @@
+# YOLO segmentation dataset for fly body parts (head, thorax, abdomen)
+train: train/images
+val: val/images
+
+nc: 3
+names: ['abdomen', 'head', 'thorax']

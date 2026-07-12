@@ -1,0 +1,27 @@
+# these are the requirements for the two-stage YOLO fly-segmentation pipeline
+# (training, inference, trajectorytools analysis, and plotting).
+# Target environment: Vast.ai GPU instance (CUDA).
+#
+#   pip install -r requirements.txt
+#
+# IMPORTANT, torch/torchvision:
+#   Do NOT install torch from this file. Vast.ai GPU images ship a CUDA build of
+#   PyTorch already; `pip install torch` from PyPI would replace it with a
+#   CPU-only wheel and break device=0. Use a PyTorch/CUDA Vast template and
+#   leave the preinstalled torch in place. Ultralytics 8.4.52 needs torch>=1.8,
+#   which every current CUDA image satisfies. (Reference: the run was verified
+#   against torch==2.2.2 / torchvision==0.17.2.)
+
+ultralytics==8.4.52
+
+# --- rest of the stack, pinned to the verified run (safe to install on GPU) ---
+numpy==1.26.4
+opencv-python==4.13.0.92
+PyYAML==6.0.3
+matplotlib==3.10.9      # ultralytics plots=True + plot_metrics.py figures
+pandas==3.0.3           # CSV handling in inference / analysis
+scipy==1.17.1           # required by trajectorytools
+Pillow==12.2.0
+
+# --- trajectory analysis (analyze_trajectorytools.py) ---
+trajectorytools==0.4.2  # idtracker.ai trajectory toolbox
