@@ -1,5 +1,9 @@
 here is the folder titled final upload 1 for the two stage fly segmentation pipeline made by Christian in the Scaplen Lab, 2026
 
+![two-stage segmentation: raw footage, stage 1 whole-fly, stage 2 body parts](assets/example_pipeline.png)
+
+example output on a real frame: raw footage, then stage 1 whole-fly segmentation, then stage 2 body parts (blue = head, green = thorax, red = abdomen).
+
 how it works: both models were trained on datasets i collected from raw video frames. these datasets are available publicly on roboflow, and provided in this folder as well.
 
 both datasets were annotated on roboflow using Meta's SAM3, and then verified by me.
